@@ -5,10 +5,12 @@ import com.j0k3r.movies.exceptions.GenderException;
 import com.j0k3r.movies.exceptions.MovieException;
 import com.j0k3r.movies.http.request.MovieRequest;
 import com.j0k3r.movies.http.response.MovieResponse;
+import com.j0k3r.movies.models.Actor;
 import com.j0k3r.movies.models.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -42,7 +44,7 @@ public class MovieUtils {
     public Movie updateMovieToMovieRequest(Movie movie, MovieRequest movieRequest) throws GenderException {
         movie.setTittle(movieRequest.getTittle());
         movie.setGender(genderDao.findGenderById(movieRequest.getIdGender()));
-//        movie.setActors(actorUtils.listActorsByIdsList(movieRequest.getListIdActors()));
+        movie.setActors(new ArrayList<>(actorUtils.listActorsByIdsList(movieRequest.getListIdActors())));
         return movie;
     }
 
