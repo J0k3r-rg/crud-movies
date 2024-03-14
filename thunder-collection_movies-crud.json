@@ -1,0 +1,252 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "movies-crud",
+    "dateExported": "2024-03-14T10:34:41.043Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "5fb9eb71-eadf-4fc4-a3ce-8c118b93e2cd",
+            "name": "gender",
+            "containerId": "",
+            "created": "2024-03-13T14:05:42.669Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "77ecc553-249b-4d9d-9796-027424b72432",
+            "name": "actor",
+            "containerId": "",
+            "created": "2024-03-13T14:05:54.545Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "3b479f4c-236b-4c70-acbd-4e99280d0f64",
+            "name": "movie",
+            "containerId": "",
+            "created": "2024-03-13T20:03:54.249Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "b3158605-a0ca-43f8-ae2a-fc44f5a9773d",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "5fb9eb71-eadf-4fc4-a3ce-8c118b93e2cd",
+            "name": "save-gender",
+            "url": "http://127.0.0.1:8080/api/v1/gender",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-12T17:25:05.337Z",
+            "modified": "2024-03-13T20:32:41.443Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Terror\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "8c826067-9a8a-4275-aa70-e89e6f724d32",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "5fb9eb71-eadf-4fc4-a3ce-8c118b93e2cd",
+            "name": "all-genders",
+            "url": "http://127.0.0.1:8080/api/v1/gender",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-12T17:26:59.088Z",
+            "modified": "2024-03-13T14:02:48.427Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "c0f67437-4fc2-4b78-b82f-ce40201ddbec",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "5fb9eb71-eadf-4fc4-a3ce-8c118b93e2cd",
+            "name": "UpdateGender",
+            "url": "http://127.0.0.1:8080/api/v1/gender/2",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-13T12:31:11.201Z",
+            "modified": "2024-03-13T14:05:07.872Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"Gender Update\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a6313daf-3fd3-4292-8edc-4a5acc8478a7",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "5fb9eb71-eadf-4fc4-a3ce-8c118b93e2cd",
+            "name": "DeleteGender",
+            "url": "http://127.0.0.1:8080/api/v1/gender/1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-13T12:32:03.644Z",
+            "modified": "2024-03-13T14:02:54.008Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "053a27d5-ca41-49ca-a189-82fb45fa458d",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "77ecc553-249b-4d9d-9796-027424b72432",
+            "name": "all",
+            "url": "http://127.0.0.1:8080/api/v1/actors",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-13T14:06:04.674Z",
+            "modified": "2024-03-13T14:07:15.769Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "937384d2-fc2d-46db-8765-cf9c97a1f251",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "77ecc553-249b-4d9d-9796-027424b72432",
+            "name": "save",
+            "url": "http://127.0.0.1:8080/api/v1/actors",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-03-13T14:08:10.613Z",
+            "modified": "2024-03-13T20:33:02.753Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"batman\",\n  \"urlImage\" : \"imageurl.com/j0k3r\"\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "8486822d-b8e9-4bde-8ec0-535aeb0e8bbd",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "77ecc553-249b-4d9d-9796-027424b72432",
+            "name": "update",
+            "url": "http://127.0.0.1:8080/api/v1/actors/5",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-03-13T14:09:48.834Z",
+            "modified": "2024-03-13T14:13:57.806Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\" : \"j0k3r update\",\n  \"urlImage\" : \"imageurl.com/j0k3r-update\"\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "9f4e4698-79fc-4418-854e-75d9ac44842a",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "77ecc553-249b-4d9d-9796-027424b72432",
+            "name": "delete",
+            "url": "http://127.0.0.1:8080/api/v1/actors/1",
+            "method": "DELETE",
+            "sortNum": 80000,
+            "created": "2024-03-13T14:10:26.838Z",
+            "modified": "2024-03-13T14:10:39.201Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d69258da-c10b-41d3-a74a-f414c0cf2f58",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "3b479f4c-236b-4c70-acbd-4e99280d0f64",
+            "name": "getById",
+            "url": "http://127.0.0.1:8080/api/v1/movies/1",
+            "method": "GET",
+            "sortNum": 100000,
+            "created": "2024-03-13T20:04:01.911Z",
+            "modified": "2024-03-13T20:36:33.799Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "8c422de1-4073-4591-9995-324975ad9181",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "3b479f4c-236b-4c70-acbd-4e99280d0f64",
+            "name": "getAll",
+            "url": "http://127.0.0.1:8080/api/v1/movies",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2024-03-13T20:04:06.884Z",
+            "modified": "2024-03-13T20:06:43.704Z",
+            "headers": [],
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "7799cc7f-fdf6-44a9-b134-9879aff74944",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "3b479f4c-236b-4c70-acbd-4e99280d0f64",
+            "name": "save",
+            "url": "http://127.0.0.1:8080/api/v1/movies",
+            "method": "POST",
+            "sortNum": 120000,
+            "created": "2024-03-13T20:04:11.030Z",
+            "modified": "2024-03-13T20:33:50.205Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tittle\" : \"todos\",\n  \"idGender\" : 2,\n  \"listIdActors\" : [1,2,3]\n}",
+                "form": []
+            },
+            "reqType": "post",
+            "tests": []
+        },
+        {
+            "_id": "b2592deb-51bb-4354-b28e-ca7786c5cdb9",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "3b479f4c-236b-4c70-acbd-4e99280d0f64",
+            "name": "delete",
+            "url": "http://127.0.0.1:8080/api/v1/movies/2",
+            "method": "DELETE",
+            "sortNum": 130000,
+            "created": "2024-03-13T20:04:15.079Z",
+            "modified": "2024-03-13T20:34:06.474Z",
+            "headers": [],
+            "params": [],
+            "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "005ecddc-361f-495f-89bf-c927f311681f",
+            "colId": "d2cedeef-9eb2-4efd-9e85-5c108711e2a3",
+            "containerId": "3b479f4c-236b-4c70-acbd-4e99280d0f64",
+            "name": "update",
+            "url": "http://127.0.0.1:8080/api/v1/movies/3",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2024-03-13T20:04:19.496Z",
+            "modified": "2024-03-13T20:34:41.065Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tittle\" : \"todos los personajes\",\n  \"idGender\" : 2,\n  \"listIdActors\" : [1,2,3]\n}",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        }
+    ]
+}
