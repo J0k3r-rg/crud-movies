@@ -10,7 +10,9 @@
 444 "This id movie do not exist"
 445 "Tittle's movie is required"
 446 "IdGender's is required"
-447 "All idActor's are required"
+447 "One on more id in listIdActor is null or invalid"
 448 "The tittle movie is repeat"
+449 "the list of actor is null or empty"
 
+489 RunTimeException
 450 "id is required or invalid"

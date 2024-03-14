@@ -56,7 +56,7 @@ public class MovieController {
         Movie movie;
         try {
             movie = movieService.updateMovie(id, movieRequest);
-        } catch (MovieException | GenderException | PropertiesException e) {
+        } catch (MovieException | GenderException | PropertiesException | RuntimeException e) {
             return ResponseEntity.badRequest().body(
                     ErrorResponseUtils.generateErrorResponse(e)
             );

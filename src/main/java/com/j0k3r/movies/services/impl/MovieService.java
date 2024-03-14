@@ -52,7 +52,7 @@ public class MovieService implements IMovieService {
     }
 
     @Override
-    public Movie updateMovie(Long id, MovieRequest movieRequest) throws MovieException, GenderException, PropertiesException {
+    public Movie updateMovie(Long id, MovieRequest movieRequest) throws MovieException, GenderException, PropertiesException,RuntimeException {
         Utils.validateIdLong(id);
         Movie movie = movieDao.getMovieById(id);
         movieUtils.validateMovieRequest(movieRequest);

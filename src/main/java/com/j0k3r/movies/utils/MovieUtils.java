@@ -5,7 +5,6 @@ import com.j0k3r.movies.exceptions.GenderException;
 import com.j0k3r.movies.exceptions.MovieException;
 import com.j0k3r.movies.http.request.MovieRequest;
 import com.j0k3r.movies.http.response.MovieResponse;
-import com.j0k3r.movies.models.Actor;
 import com.j0k3r.movies.models.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -55,17 +54,20 @@ public class MovieUtils {
         ).toList();
     }
 
-    public void validateMovieRequest(MovieRequest movieRequest) throws MovieException {
+    public void validateMovieRequest(MovieRequest movieRequest) throws MovieException, RuntimeException {
         if (movieRequest.getTittle() == null || movieRequest.getTittle().isEmpty()) {
             throw new MovieException("Tittle's movie is required",445);
         }
         if (movieRequest.getIdGender() == null || movieRequest.getIdGender() <=0){
-            throw new MovieException("IdGender's is required",4456);
+            throw new MovieException("IdGender's is required",446);
         }
+        if (movieRequest.getListIdActors() == null || movieRequest.getListIdActors().isEmpty())
+            throw new MovieException("the list of actor is null or empty",449);
+
         movieRequest.getListIdActors().forEach(
                 (idMovie) -> {
                     if (idMovie == null || idMovie <= 0) try {
-                        throw new MovieException("All idActor's are required",447);
+                        throw new MovieException("One on more id in listIdActor is null or invalid",447);
                     } catch (MovieException e) {
                         throw new RuntimeException(e);
                     }
