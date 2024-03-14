@@ -35,7 +35,7 @@ public class Movie implements Serializable {
     @ManyToOne
     private Gender gender;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
     @JoinTable(
             name = "actor_movie",
             joinColumns = @JoinColumn(name = "id_movie", nullable = false),

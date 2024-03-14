@@ -10,4 +10,8 @@ public class Utils {
         }
     }
 
+    public static void validateString(String username) throws PropertiesException {
+        if (username == null || username.isEmpty())
+            throw new PropertiesException("Name is required or invalid", 451);
+    }
 }
