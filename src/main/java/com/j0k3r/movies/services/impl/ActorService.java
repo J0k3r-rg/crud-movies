@@ -26,7 +26,7 @@ public class ActorService implements IActorService {
     public Actor save(ActorRequest actorRequest) throws ActorException {
         actorUtils.validateActorRequest(actorRequest);
         if (actorDao.findActorByName(actorRequest.getName()).isPresent())
-            throw new ActorException("This actor already exists in database");
+            throw new ActorException("This actor already exists in database", 426);
         return actorDao.save(actorUtils.mappingActorRequestToActor(actorRequest));
     }
 

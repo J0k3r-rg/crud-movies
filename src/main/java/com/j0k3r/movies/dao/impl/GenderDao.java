@@ -21,7 +21,7 @@ public class GenderDao implements IGenderDao {
     @Override
     public Gender findGenderById(Long id) throws GenderException {
         return genderRepository.findById(id).orElseThrow(
-                () -> new GenderException("This gender id not found in database")
+                () -> new GenderException("This gender id not found in database", 433)
         );
     }
 

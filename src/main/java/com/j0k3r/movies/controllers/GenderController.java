@@ -31,7 +31,7 @@ public class GenderController {
             gender = genderService.findById(id);
         } catch(PropertiesException | GenderException e){
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(gender);
@@ -45,7 +45,7 @@ public class GenderController {
             gender = genderService.save(genderRequest);
         }catch (GenderException e){
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(gender);
@@ -58,7 +58,7 @@ public class GenderController {
             gender = genderService.update(id, genderRequest);
         } catch (PropertiesException | GenderException e){
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(gender);
@@ -71,7 +71,7 @@ public class GenderController {
             gender = genderService.deleteById(id);
         } catch (PropertiesException | GenderException e){
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(gender);

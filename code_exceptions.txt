@@ -1,0 +1,16 @@
+423 "actor not found"
+424 "Name's actor is required"
+425 "LastName's actor is required"
+426 "This actor already exists in database"
+
+433 "This gender id not found in database"
+434 "Name's gender is required"
+435 "This gender already exists in database"
+
+444 "This id movie do not exist"
+445 "Tittle's movie is required"
+446 "IdGender's is required"
+447 "All idActor's are required"
+448 "The tittle movie is repeat"
+
+450 "id is required or invalid"

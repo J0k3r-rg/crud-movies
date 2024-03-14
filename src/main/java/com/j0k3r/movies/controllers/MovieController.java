@@ -31,7 +31,7 @@ public class MovieController {
             movie = movieService.findMovieById(id);
         } catch (PropertiesException | MovieException e) {
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400,e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(movie);
@@ -45,20 +45,20 @@ public class MovieController {
             movie = movieService.saveMovie(movieRequest);
         } catch (MovieException | GenderException | RuntimeException e) {
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400,e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(movie);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateMovie(@PathVariable Long id, @RequestBody MovieRequest movieRequest){
+    public ResponseEntity<?> updateMovie(@PathVariable Long id, @RequestBody(required = false) MovieRequest movieRequest){
         Movie movie;
         try {
             movie = movieService.updateMovie(id, movieRequest);
         } catch (MovieException | GenderException | PropertiesException e) {
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(movie);
@@ -71,7 +71,7 @@ public class MovieController {
             movie = movieService.deleteMovieById(id);
         } catch (MovieException e) {
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(movie);

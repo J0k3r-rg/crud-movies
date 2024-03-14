@@ -1,19 +1,19 @@
 package com.j0k3r.movies.exceptions;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
+@Getter
 public class MovieException extends Exception{
 
     private Integer code;
 
     public MovieException(String message, Integer code){
         super(message);
+        this.code = code;
     }
-    public MovieException(String message, Throwable cause) {
+    public MovieException(String message, Throwable cause, Integer code) {
         super(message, cause);
+        this.code = code;
     }
 
     public MovieException(Throwable cause) {

@@ -36,7 +36,7 @@ public class GenderUtils {
 
     public void validateGenderRequest(GenderRequest genderRequest) throws GenderException {
         if (genderRequest.getName() == null || genderRequest.getName().isEmpty()) {
-            throw new GenderException("Name is required");
+            throw new GenderException("Name's gender is required", 434);
         }
     }
 

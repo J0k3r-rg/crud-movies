@@ -1,7 +1,6 @@
 package com.j0k3r.movies.utils;
 
 import com.j0k3r.movies.dao.IActorDao;
-import com.j0k3r.movies.dao.impl.ActorDao;
 import com.j0k3r.movies.exceptions.ActorException;
 import com.j0k3r.movies.http.request.ActorRequest;
 import com.j0k3r.movies.models.Actor;
@@ -18,9 +17,9 @@ public class ActorUtils {
 
     public void validateActorRequest(ActorRequest actorRequest) throws ActorException{
         if (actorRequest.getName() == null || actorRequest.getName().isEmpty())
-            throw new ActorException("Name is required");
+            throw new ActorException("Name's actor is required", 424);
         if (actorRequest.getUrlImage() == null || actorRequest.getUrlImage().isEmpty())
-            throw new ActorException("Last name is required");
+            throw new ActorException("LastName's actor is required", 425);
     }
 
     public Actor mappingActorRequestToActor(ActorRequest actorRequest) {

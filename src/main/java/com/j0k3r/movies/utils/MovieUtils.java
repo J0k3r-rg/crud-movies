@@ -42,7 +42,7 @@ public class MovieUtils {
     public Movie updateMovieToMovieRequest(Movie movie, MovieRequest movieRequest) throws GenderException {
         movie.setTittle(movieRequest.getTittle());
         movie.setGender(genderDao.findGenderById(movieRequest.getIdGender()));
-        movie.setActors(actorUtils.listActorsByIdsList(movieRequest.getListIdActors()));
+//        movie.setActors(actorUtils.listActorsByIdsList(movieRequest.getListIdActors()));
         return movie;
     }
 
@@ -55,15 +55,15 @@ public class MovieUtils {
 
     public void validateMovieRequest(MovieRequest movieRequest) throws MovieException {
         if (movieRequest.getTittle() == null || movieRequest.getTittle().isEmpty()) {
-            throw new MovieException("Tittle movie is required",111);
+            throw new MovieException("Tittle's movie is required",445);
         }
         if (movieRequest.getIdGender() == null || movieRequest.getIdGender() <=0){
-            throw new MovieException("Id gender is required",111);
+            throw new MovieException("IdGender's is required",4456);
         }
         movieRequest.getListIdActors().forEach(
                 (idMovie) -> {
                     if (idMovie == null || idMovie <= 0) try {
-                        throw new MovieException("All id actors are required",111);
+                        throw new MovieException("All idActor's are required",447);
                     } catch (MovieException e) {
                         throw new RuntimeException(e);
                     }

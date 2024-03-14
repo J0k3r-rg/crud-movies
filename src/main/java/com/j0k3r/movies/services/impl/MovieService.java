@@ -28,7 +28,7 @@ public class MovieService implements IMovieService {
     public Movie saveMovie(MovieRequest movieRequest) throws MovieException, GenderException, RuntimeException {
         movieUtils.validateMovieRequest(movieRequest);
         if (movieDao.getMovieByTittle(movieRequest.getTittle()).isPresent())
-            throw new MovieException("The tittle movie is repeat",400);
+            throw new MovieException("The tittle movie is repeat", 448);
         return movieDao.saveMovie(movieUtils.mappingMovieRequestToMovie(movieRequest));
     }
 

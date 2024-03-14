@@ -29,7 +29,7 @@ public class ActorController {
             actorRequest = actorService.findById(id);
         }  catch (ActorException | PropertiesException e) {
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(actorRequest);
@@ -42,7 +42,7 @@ public class ActorController {
             actor = actorService.save(actorRequest);
         } catch (ActorException e){
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400,e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(actor);
@@ -55,7 +55,7 @@ public class ActorController {
             actor = actorService.update(id,actorRequest);
         }catch(ActorException | PropertiesException e){
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(actor);
@@ -68,7 +68,7 @@ public class ActorController {
             actor = actorService.deleteById(id);
         } catch (ActorException | PropertiesException e) {
             return ResponseEntity.badRequest().body(
-                    ErrorResponseUtils.generateErrorResponse(400, e.getMessage())
+                    ErrorResponseUtils.generateErrorResponse(e)
             );
         }
         return ResponseEntity.ok(actor);

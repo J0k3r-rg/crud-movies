@@ -30,7 +30,7 @@ public class MovieDao implements IMovieDao {
     @Override
     public Movie getMovieById(Long id) throws MovieException {
         return movieRepository.findById(id).orElseThrow(
-                () -> new MovieException("This id movie do not exist",404)
+                () -> new MovieException("This id movie do not exist",444)
         );
     }
 

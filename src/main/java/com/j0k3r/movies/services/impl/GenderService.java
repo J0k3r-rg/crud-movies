@@ -26,7 +26,7 @@ public class GenderService implements IGenderService{
     public Gender save(GenderRequest genderRequest) throws GenderException {
         genderUtils.validateGenderRequest(genderRequest);
         if (genderDao.findGenderByName(genderRequest.getName()).isPresent())
-            throw new GenderException("This gender already exists in database");
+            throw new GenderException("This gender already exists in database", 435);
 
         return genderDao.saveGender(genderUtils.mappingGenderRequestToGender(genderRequest));
     }

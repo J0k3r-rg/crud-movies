@@ -24,7 +24,7 @@ public class ActorDao implements IActorDao {
     @Override
     public Actor findById(Long id) throws ActorException {
         return actorRepository.findById(id).orElseThrow(
-                () -> new ActorException("Actor not found")
+                () -> new ActorException("Actor not found",423)
         );
     }
 
