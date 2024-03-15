@@ -7,7 +7,6 @@ import com.j0k3r.movies.http.request.UserRequest;
 import com.j0k3r.movies.http.response.UserResponse;
 import com.j0k3r.movies.models.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -46,7 +45,7 @@ public class UserUtils {
         return UserResponse.builder()
                 .username(user.getUsername())
                 .idRoles(roleUtils.mappingRolesToRoleRequest(user.getRoles()))
-                .active(user.getActivate())
+                .active(user.getEnable())
                 .build();
     }
 
@@ -64,7 +63,7 @@ public class UserUtils {
 
     public UserEntity updateUserWithUserRequest(UserEntity user, UserRequest userRequest) throws UserException, RoleException {
         user.setUsername(userRequest.getUsername());
-        user.setActivate(userRequest.getActivate());
+        user.setEnable(userRequest.getActivate());
         user.setRoles(roleUtils.mappingRolesRequestToRole(userRequest.getIdRoles()));
         return user;
     }

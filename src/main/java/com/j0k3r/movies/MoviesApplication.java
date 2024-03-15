@@ -1,6 +1,5 @@
 package com.j0k3r.movies;
 
-import com.j0k3r.movies.dao.IRoleDao;
 import com.j0k3r.movies.http.request.RoleRequest;
 import com.j0k3r.movies.http.request.UserRequest;
 import com.j0k3r.movies.services.IRoleService;
@@ -39,6 +38,7 @@ public class MoviesApplication {
 					UserRequest.builder()
 							.username("joker")
 							.password("123456")
+							.activate(true)
 							.idRoles(List.of(1L))
 						.build()
         	);
